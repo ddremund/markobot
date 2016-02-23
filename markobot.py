@@ -3,16 +3,20 @@
 import db
 import pymongo
 
-def create_chain(name, corpus, order):
-    
+class markobot:
 
-def update_chain(name, corpus, order = 0):
+    def __init__(self, database):
+        self.db = db.get_db()
 
-def persist_chain(chain, name):
+    def create_chain(name, corpus, order):
 
-def load_chain(name):
+    def update_chain(name, corpus, order = 0):
 
-def update_chain(chain, key, value):
+    def persist_chain(chain, name):
+
+    def load_chain(name):
+
+    def update_chain(chain, key, value):
 
 
 

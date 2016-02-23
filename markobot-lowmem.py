@@ -1,5 +1,13 @@
 # markbot with minimum memory usage
 
-def create_chain(name, corpus, order):
+import db
+import pymongo
 
-def update_chain(name, key, value):
+class markobot:
+
+    def __init__(self, database):
+        self.db = db.get_db()
+
+    def create_chain(name, corpus, order):
+
+    def update_chain(name, key, value):
