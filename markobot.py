@@ -5,10 +5,13 @@ import pymongo
 
 class markobot:
 
-    def __init__(self, database):
-        self.db = db.get_db()
+    def __init__(self):
+        self.database = db.get_db()
 
     def create_chain(name, corpus, order):
+    
+        if database[name].find_one({'_id': "prefs"}):
+            return None
 
     def update_chain(name, corpus, order = 0):
 
