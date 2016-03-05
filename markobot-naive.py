@@ -5,21 +5,45 @@ import pymongo
 
 class markobot:
 
-    def __init__(self):
-        self.database = db.get_db()
+    def __init__(self, name):
+        self.database = db.get_conn()[name]
 
-    def create_chain(name, corpus, order):
+    def create_chain(self, name, corpus, order):
     
-        if database[name].find_one({'_id': "prefs"}):
+        if self.database.find_one({'_id': name}):
             return None
+        self.database.update({'_id': name}, {'$set': {'__ORDER__': order}})
 
-    def update_chain(name, corpus, order = 0):
 
-    def persist_chain(chain, name):
+    def update_chain(self, name, corpus, order = 0):
 
-    def load_chain(name):
+    def persist_chain(self, chain, name):
 
-    def update_chain(chain, key, value):
+    def load_chain(self, name):
 
-    def join_chains(chain1, chain2):
+    	return self.database.find_one({'_id': name})
+
+    def update_chain(self, chain, key, value):
+
+    def join_chains(self, chain1, chain2):
+
+    def dict_from_corpus(self, corpus, order):
+
+    	with open(filename) as corpus:
+    		words = corpus.read()
+    		i = iter(words.split())
+    		tokens = map(" ".join,zip(*[i]*order))
+    	
+    	tokens.append("")
+    	token_map = dict.fromkeys(tokens, [])
+
+    	prev_token = ""
+
+    	for token in tokens:
+    		token_map[last_token].append(token)
+    		last_token = token
+
+    	return token_map
+
+
 
