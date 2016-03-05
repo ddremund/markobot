@@ -21,5 +21,5 @@ class markobot:
 
     def update_chain(chain, key, value):
 
-
+    def join_chains(chain1, chain2):
 
